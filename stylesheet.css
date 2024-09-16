@@ -1,0 +1,7 @@
+#container {
+    display: flex;
+    margin: 100px;
+    outline: 2px solid black;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
