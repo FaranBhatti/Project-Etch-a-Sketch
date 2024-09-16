@@ -1,7 +1,11 @@
 #container {
-    display: flex;
     margin: 100px;
+    height: 816px;
+    width: 816px;
     outline: 2px solid black;
+
+    display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    align-content: flex-start;
 }
