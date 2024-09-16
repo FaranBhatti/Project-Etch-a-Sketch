@@ -1,8 +1,8 @@
 #container {
     margin: auto;
     margin-top: 50px;
-    height: 816px;
-    width: 816px;
+    height: 960px;
+    width: 960px;
     outline: 2px solid black;
 
     display: flex;
