@@ -1,6 +1,22 @@
 const rows = 16;
-const columns = 10;
+const columns = 16;
 
+function createGrid(rows, columns) {
+    
+    let gridContainer = document.querySelector('#container');
+
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < columns; j++) {
+
+            // create grid item
+            let girdItem = document.createElement('div');
+
+            // style it
+            gridItem.style.border = 'solid black 0.1px';
+            gridItem.style.width = '50px';
+        }
+    }
+}
 let gridContainer = document.querySelector('#container');
 
 for (let i = 0; i < rows; i++) {
@@ -11,8 +27,8 @@ for (let i = 0; i < rows; i++) {
         
         // give it it's style
         gridItem.style.border = 'solid black 0.1px';
-        gridItem.style.width = "50px";
-        gridItem.style.height = "50px";
+        gridItem.style.width = '50px';
+        gridItem.style.height = '50px';
         gridContainer.appendChild(gridItem);
     }   
 }

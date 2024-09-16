@@ -1,11 +1,20 @@
 #container {
-    margin: 100px;
+    margin: auto;
+    margin-top: 50px;
     height: 816px;
     width: 816px;
     outline: 2px solid black;
 
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;    
+}
+
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
 }
