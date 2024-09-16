@@ -33,7 +33,6 @@ function createGrid(rows, columns) {
     }
 }
 
-
 function playEtchASketch() {
         let resetBtn = document.querySelector("#reset");
 
@@ -41,6 +40,5 @@ function playEtchASketch() {
             createGrid(rows, columns);
         });
 }
-
 
 playEtchASketch();
