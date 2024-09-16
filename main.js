@@ -16,9 +16,14 @@ function createGrid(rows, columns) {
             gridItem.style.width = '50px';
             gridItem.style.height = '50px';
             
+            gridItem.addEventListener('mouseover', (e) => {
+                gridItem.style.backgroundColor = 'black';
+            });
 
             // add to container
             gridContainer.appendChild(gridItem);
         }
     }
 }
+
+createGrid(rows, columns);
