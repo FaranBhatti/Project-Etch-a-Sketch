@@ -61,6 +61,22 @@ function isChosenSquaresPerSideValid(squaresPerSide) {
     return true;
 }
 
+/**
+ * 
+ * @returns string to set css style property for javascript
+ */
+function generateRandomRGB() {
+
+    let red = Math.round(getRandomNumber(0, 255));
+    let green = Math.round(getRandomNumber(0, 255));
+    let blue = Math.round(getRandomNumber(0, 255));
+
+    return ("rgb(" + red + ", " + green + ", " + blue + ")")
+}
+
+function getRandomNumber(min, max) {
+    return Math.random() * (max - min) + min;
+}
 
 function playEtchASketch() {
 
@@ -68,12 +84,12 @@ function playEtchASketch() {
 
         resetBtn.addEventListener('click', (e) => {
 
-            squaresPerSide = prompt("How many squares per side do you want for the new grid?");
+            squaresPerSide = prompt("Input Grid Size (1-100)");
 
             if (isChosenSquaresPerSideValid(squaresPerSide)) {
                 createGrid(squaresPerSide);
             } else {
-                console.log("Please input an even number of squares & don't choose a number greater than 100.");
+                window.alert("Invalid input.");
             }
         });
 }
