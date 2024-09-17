@@ -47,10 +47,10 @@ function createGrid(squaresPerSide) {
  */
 function isChosenSquaresPerSideValid(squaresPerSide) {
 
-    const isSquaresChosenOdd = (CANVAS_PIXELS % squaresPerSide == 0) === 0;
-    const isSquaresChosenGreaterThan100 = (squaresPerSide > 100) === 0;
+    const isNotDivisible = (CANVAS_PIXELS % squaresPerSide) !== 0;
+    const isSquaresChosenGreaterThan100 = squaresPerSide > 100;
 
-    if (isSquaresChosenOdd) {
+    if (isNotDivisible) {
         return false;
     }
 
