@@ -1,11 +1,14 @@
-const rows = 16;
-const columns = 16;
+let CANVAS_PIXELS = 960;
 
-function createGrid(rows, columns) {
+
+function createGrid(squaresPerSide) {
     
     let gridContainer = document.querySelector('#container');
     let oldGridItems = document.querySelectorAll('#grid-item');
-    
+    let rows = squaresPerSide;
+    let columns = squaresPerSide;
+    let sideSize = (CANVAS_PIXELS / squaresPerSide);
+
     if (oldGridItems) {
         oldGridItems.forEach(oldGridItem => {
             oldGridItem.remove();
@@ -19,8 +22,8 @@ function createGrid(rows, columns) {
             let gridItem = document.createElement('div');
 
             // style it
-            gridItem.style.width = '60px';
-            gridItem.style.height = '60px';
+            gridItem.style.width = sideSize + 'px';
+            gridItem.style.height = sideSize + 'px';
             gridItem.id = "grid-item";
             
             gridItem.addEventListener('mouseover', (e) => {
@@ -34,10 +37,16 @@ function createGrid(rows, columns) {
 }
 
 function playEtchASketch() {
-        let resetBtn = document.querySelector("#reset");
+
+    let resetBtn = document.querySelector("#reset");
 
         resetBtn.addEventListener('click', (e) => {
-            createGrid(rows, columns);
+            squaresPerSide = prompt("How many squares per side do you want for the new grid?");
+            if (CANVAS_PIXELS % squaresPerSide === 0) {
+                createGrid(squaresPerSide)
+            } else {
+                console.log("That doesn't fit nicely into the canvas");
+            }
         });
 }
 
