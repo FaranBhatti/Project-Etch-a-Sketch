@@ -73,7 +73,7 @@ function playEtchASketch() {
             if (isChosenSquaresPerSideValid(squaresPerSide)) {
                 createGrid(squaresPerSide);
             } else {
-                console.log("Chosen squares per side didn't pass the checks. Please input an even number of squares & don't choose a number greater than 100.");
+                console.log("Please input an even number of squares & don't choose a number greater than 100.");
             }
         });
 }
