@@ -36,16 +36,40 @@ function createGrid(squaresPerSide) {
     }
 }
 
+/**
+ * Function that checks the user's input of squares per side
+ * @param   {integer} squaresPerSide 
+ * @returns {boolean} true if the chosen number of squares per side is valid; false if chosen number of squares per side is not valid
+ */
+function isChosenSquaresPerSideValid(squaresPerSide) {
+
+    const isSquaresChosenOdd = (CANVAS_PIXELS % squaresPerSide == 0) === 0;
+    const isSquaresChosenGreaterThan100 = (squaresPerSide > 100) === 0;
+
+    if (isSquaresChosenOdd) {
+        return false;
+    }
+
+    if (isSquaresChosenGreaterThan100) {
+        return false;
+    }
+
+    return true;
+}
+
+
 function playEtchASketch() {
 
     let resetBtn = document.querySelector("#reset");
 
         resetBtn.addEventListener('click', (e) => {
+
             squaresPerSide = prompt("How many squares per side do you want for the new grid?");
-            if (CANVAS_PIXELS % squaresPerSide === 0) {
-                createGrid(squaresPerSide)
+
+            if (isChosenSquaresPerSideValid(squaresPerSide)) {
+                createGrid(squaresPerSide);
             } else {
-                console.log("That doesn't fit nicely into the canvas");
+                console.log("Chosen squares per side didn't pass the checks. Please input an even number of squares & don't choose a number greater than 100.");
             }
         });
 }
