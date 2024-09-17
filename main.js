@@ -1,6 +1,10 @@
 let CANVAS_PIXELS = 960;
 
-
+/**
+ * Creates the sketchpad for Etch a Sketch game dynamically based off of the number of squares a user wants on one side.
+ * 
+ * @param {integer} squaresPerSide 
+ */
 function createGrid(squaresPerSide) {
     
     let gridContainer = document.querySelector('#container');
