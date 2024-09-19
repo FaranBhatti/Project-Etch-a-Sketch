@@ -62,6 +62,23 @@ function clearScreen() {
 }
 
 /**
+ * Allows for rgb color when coloring canvas
+ */
+function toggleRGB() {
+    let rgbBtn = document.querySelector('#rgb');
+
+    RGB = !RGB;
+
+    if(RGB) {
+        rgbBtn.textContent = "Rainbow Mode";
+        rgbBtn.style.backgroundColor = "green";
+    } else {
+        rgbBtn.textContent = "Rainbow Mode";
+        rgbBtn.style.backgroundColor = "red";
+    }
+}
+
+/**
  * Function that checks the user's input of squares per side
  * @param   {integer} squaresPerSide 
  * @returns {boolean} true if the chosen number of squares per side is valid; false if chosen number of squares per side is not valid
@@ -101,36 +118,31 @@ function getRandomNumber(min, max) {
 
 function playEtchASketch() {
 
-    let changeGridBtn = document.querySelector("#change-grid");
-    let clearScreenBtn = document.querySelector("#clear-btn");
-    let rgbBtn = document.querySelector("#rgb-btn");
+    let buttonMenu = document.querySelectorAll('#buttons button');
 
-    changeGridBtn.addEventListener('click', (e) => {
-        squaresPerSide = prompt("Input Grid Size (1-100)");
+    buttonMenu.forEach(button => {
+        button.addEventListener('click', (e) => {
+            let clickedBtn = e.target.id;
 
-        if (isChosenSquaresPerSideValid(squaresPerSide)) {
-            createGrid(squaresPerSide);
-        } else {
-            window.alert("Invalid input.");
-        }
+            switch (clickedBtn) {
+                case 'clear':
+                    clearScreen();
+                    break;
+                case 'rgb':
+                    toggleRGB();
+                    break;
+                case 'grid':
+                    squaresPerSide = prompt("Input Grid Size (1-100)");
+
+                    if (isChosenSquaresPerSideValid(squaresPerSide)) {
+                        createGrid(squaresPerSide);
+                    } else {
+                        window.alert("Invalid input.");
+                    }
+                    break;
+            }
+        });
     });
-
-    clearScreenBtn.addEventListener('click', (e) => {
-        clearScreen();
-    })
-    
-    rgbBtn.addEventListener('click', (e) => {
-        RGB = !RGB;
-
-        if(RGB) {
-            rgbBtn.textContent = "Rainbow Mode";
-            rgbBtn.style.backgroundColor = "green";
-        } else {
-            rgbBtn.textContent = "Rainbow Mode";
-            rgbBtn.style.backgroundColor = "red";
-        }
-    })
-    
 }
 
 playEtchASketch();
