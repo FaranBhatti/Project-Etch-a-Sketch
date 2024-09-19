@@ -106,7 +106,6 @@ function playEtchASketch() {
     let rgbBtn = document.querySelector("#rgb-btn");
 
     changeGridBtn.addEventListener('click', (e) => {
-
         squaresPerSide = prompt("Input Grid Size (1-100)");
 
         if (isChosenSquaresPerSideValid(squaresPerSide)) {
@@ -121,7 +120,6 @@ function playEtchASketch() {
     })
     
     rgbBtn.addEventListener('click', (e) => {
-
         RGB = !RGB;
 
         if(RGB) {
