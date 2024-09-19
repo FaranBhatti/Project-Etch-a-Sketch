@@ -1,10 +1,37 @@
+#header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
 
+h1 {
+    font-size: 50px;
+}
+#buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+#clear-btn {
+    height: 100px;
+    width: 200px;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+#rgb-btn {
+    height: 100px;
+    width: 200px;
+    border-radius: 20px;
+    font-size: 20px;
+    background-color: red;
+}
 
 #container {
     margin: auto;
     margin-top: 50px;
-    height: 960px;
-    width: 960px;
+    height: 450px;
+    width: 450px;
     outline: 2px solid black;
 
     display: flex;

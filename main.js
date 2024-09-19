@@ -1,4 +1,5 @@
-let CANVAS_PIXELS = 960;
+let CANVAS_PIXELS = 450;
+let RGB = false;
 
 /**
  * Creates the sketchpad for Etch a Sketch game dynamically based off of the number of squares a user wants on one side.
@@ -31,7 +32,12 @@ function createGrid(squaresPerSide) {
             gridItem.id = "grid-item";
             
             gridItem.addEventListener('mouseover', (e) => {
-                gridItem.style.backgroundColor = 'black';
+
+                if(RGB) {
+                    
+                } else {
+                    gridItem.style.backgroundColor = 'black';
+                }
             });
 
             // add to container
@@ -80,18 +86,34 @@ function getRandomNumber(min, max) {
 
 function playEtchASketch() {
 
-    let resetBtn = document.querySelector("#reset");
+    let resetBtn = document.querySelector("#clear-btn");
 
-        resetBtn.addEventListener('click', (e) => {
+    resetBtn.addEventListener('click', (e) => {
 
-            squaresPerSide = prompt("Input Grid Size (1-100)");
+        squaresPerSide = prompt("Input Grid Size (1-100)");
 
-            if (isChosenSquaresPerSideValid(squaresPerSide)) {
-                createGrid(squaresPerSide);
-            } else {
-                window.alert("Invalid input.");
-            }
-        });
+        if (isChosenSquaresPerSideValid(squaresPerSide)) {
+            createGrid(squaresPerSide);
+        } else {
+            window.alert("Invalid input.");
+        }
+    });
+    
+    let rgbBtn = document.querySelector("#rgb-btn");
+
+    rgbBtn.addEventListener('click', (e) => {
+
+        RGB = !RGB;
+
+        if(RGB) {
+            rgbBtn.textContent = "Rainbow Mode";
+            rgbBtn.style.backgroundColor = "green";
+        } else {
+            rgbBtn.textContent = "Rainbow Mode";
+            rgbBtn.style.backgroundColor = "red";
+        }
+    })
+    
 }
 
 playEtchASketch();
