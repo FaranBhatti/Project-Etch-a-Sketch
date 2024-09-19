@@ -9,10 +9,17 @@ h1 {
 }
 #buttons {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 #clear-btn {
+    height: 100px;
+    width: 200px;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+#change-grid {
     height: 100px;
     width: 200px;
     border-radius: 20px;

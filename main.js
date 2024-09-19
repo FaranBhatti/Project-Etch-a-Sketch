@@ -34,7 +34,7 @@ function createGrid(squaresPerSide) {
             gridItem.addEventListener('mouseover', (e) => {
 
                 if(RGB) {
-                    
+
                 } else {
                     gridItem.style.backgroundColor = 'black';
                 }
@@ -43,6 +43,21 @@ function createGrid(squaresPerSide) {
             // add to container
             gridContainer.appendChild(gridItem);
         }
+    }
+}
+
+
+/**
+ * Clears the sketchpad
+ */
+function clearScreen() {
+
+    let oldGridItems = document.querySelectorAll('#grid-item');
+
+    if (oldGridItems) {
+        oldGridItems.forEach(oldGridItem => {
+            oldGridItem.remove();
+        });
     }
 }
 
@@ -86,9 +101,11 @@ function getRandomNumber(min, max) {
 
 function playEtchASketch() {
 
-    let resetBtn = document.querySelector("#clear-btn");
+    let changeGridBtn = document.querySelector("#change-grid");
+    let clearScreenBtn = document.querySelector("#clear-btn");
+    let rgbBtn = document.querySelector("#rgb-btn");
 
-    resetBtn.addEventListener('click', (e) => {
+    changeGridBtn.addEventListener('click', (e) => {
 
         squaresPerSide = prompt("Input Grid Size (1-100)");
 
@@ -98,9 +115,11 @@ function playEtchASketch() {
             window.alert("Invalid input.");
         }
     });
-    
-    let rgbBtn = document.querySelector("#rgb-btn");
 
+    clearScreenBtn.addEventListener('click', (e) => {
+        clearScreen();
+    })
+    
     rgbBtn.addEventListener('click', (e) => {
 
         RGB = !RGB;
