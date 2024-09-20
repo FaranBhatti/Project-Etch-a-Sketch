@@ -1,7 +1,47 @@
-#container {
+#header {
+    text-align: center;
     display: flex;
-    margin: 100px;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 50px;
+}
+#buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#clear {
+    height: 100px;
+    width: 200px;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+#grid {
+    height: 100px;
+    width: 200px;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+#rgb {
+    height: 100px;
+    width: 200px;
+    border-radius: 20px;
+    font-size: 20px;
+    background-color: red;
+}
+
+#container {
+    margin: auto;
+    margin-top: 50px;
+    height: 450px;
+    width: 450px;
     outline: 2px solid black;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
 }
