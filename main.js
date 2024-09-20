@@ -34,7 +34,7 @@ function createGrid(squaresPerSide) {
             gridItem.addEventListener('mouseover', (e) => {
 
                 if(RGB) {
-
+                    gridItem.style.backgroundColor = generateRandomRGB();
                 } else {
                     gridItem.style.backgroundColor = 'black';
                 }
