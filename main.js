@@ -46,7 +46,6 @@ function createGrid(squaresPerSide) {
     }
 }
 
-
 /**
  * Clears the sketchpad
  */
@@ -79,6 +78,29 @@ function toggleRGB() {
 }
 
 /**
+ * 
+ * @returns string to set css style property for javascript
+ */
+function generateRandomRGB() {
+
+    let red = Math.round(getRandomNumber(0, 255));
+    let green = Math.round(getRandomNumber(0, 255));
+    let blue = Math.round(getRandomNumber(0, 255));
+
+    return ("rgb(" + red + ", " + green + ", " + blue + ")")
+}
+
+/**
+ * Generates a random number between (and including) the min and max
+ * @param {integer} min the minimum number to return
+ * @param {integer} max the maximum number to return
+ * @returns 
+ */
+function getRandomNumber(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+/**
  * Function that checks the user's input of squares per side
  * @param   {integer} squaresPerSide 
  * @returns {boolean} true if the chosen number of squares per side is valid; false if chosen number of squares per side is not valid
@@ -97,23 +119,6 @@ function isChosenSquaresPerSideValid(squaresPerSide) {
     }
 
     return true;
-}
-
-/**
- * 
- * @returns string to set css style property for javascript
- */
-function generateRandomRGB() {
-
-    let red = Math.round(getRandomNumber(0, 255));
-    let green = Math.round(getRandomNumber(0, 255));
-    let blue = Math.round(getRandomNumber(0, 255));
-
-    return ("rgb(" + red + ", " + green + ", " + blue + ")")
-}
-
-function getRandomNumber(min, max) {
-    return Math.random() * (max - min) + min;
 }
 
 function playEtchASketch() {
